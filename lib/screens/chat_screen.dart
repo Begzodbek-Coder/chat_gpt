@@ -43,7 +43,7 @@ class _Chat_ScreenState extends State<Chat_Screen> {
         Flexible(child: ListView.builder(
           itemCount: 6,
           itemBuilder: (context, index){
-            return const Text('I love coding and github');
+            return const Text('I love coding and GIT');
         }),),
         if(_istyping) ...{
           SpinKitThreeBounce(color: Colors.white, size: 18,),

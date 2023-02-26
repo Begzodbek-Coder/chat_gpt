@@ -1,4 +1,5 @@
 import 'package:chat_gpt/constants/constants.dart';
+import 'package:chat_gpt/services/api_service.dart';
 import 'package:chat_gpt/services/assets_manager.dart';
 import 'package:chat_gpt/widgets/text_widget.dart';
 import 'package:chat_gpt/widgets/widget.dart';
@@ -74,6 +75,20 @@ class _Chat_ScreenState extends State<Chat_Screen> {
           },
           decoration: InputDecoration.collapsed(hintText: "How I can help you?", hintStyle: TextStyle(color: Colors.grey)),
           ),
+          ),
+          IconButton(
+            onPressed: ()async{
+              try{
+                await ApiService.getModels();
+              }catch(error){
+                print("error $error");
+              }
+            }, 
+            icon: const Icon(Icons.send),
+            color: Colors.white,
+            ),
+          SizedBox(
+            height: 25,
           ),
         ],),
         }
